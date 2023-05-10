@@ -8,6 +8,10 @@ class ProductPage(BasePage):
         basket_button.click()
         self.solve_quiz_and_get_code()
 
+    def click_on_basket_button_without_quiz(self):
+        basket_button = self.browser.find_element(*ProductPageLocators.BASKET_BUTTON)
+        basket_button.click()
+
     def should_be_notification_about_product(self):
         self.should_be_notification_about_added_product()
         self.should_be_product_name_on_the_page()
